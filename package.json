@@ -11,6 +11,7 @@
   },
   "main": "./dist/scratch-gui.js",
   "scripts": {
+    "prebuild": "node scripts/update-scratch-vm.mjs",
     "build": "npm run clean && webpack --colors --bail",
     "clean": "rimraf ./build && mkdirp build && rimraf ./dist && mkdirp dist",
     "deploy": "touch build/.nojekyll && gh-pages -t -d build -m \"[skip ci] Build for $(git log --pretty=format:%H -n1)\"",
@@ -90,7 +91,7 @@
     "scratch-blocks": "github:TurboWarp/scratch-blocks#develop-builds",
     "scratch-paint": "github:TurboWarp/scratch-paint#develop",
     "scratch-render": "github:TurboWarp/scratch-render#develop",
-    "scratch-vm": "github:TurboTurboWarp/scratch-vm#c6f25722bfb105acbaed70f96ce0bdb0705aa76a",
+    "scratch-vm": "github:TurboTurboWarp/scratch-vm#develop",
     "style-loader": "^0.23.0",
     "text-encoding": "0.7.0",
     "to-style": "1.3.3",
